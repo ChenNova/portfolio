@@ -208,7 +208,20 @@ nav a:hover {
   font-size: 20px;
   font-weight: 300;
 }
+.link {
+  color: white;
+}
 
+#git-icon {
+  font-size: 40px;
+  margin-right: 10%;
+  margin-top: 5%;
+  z-index: 100;
+}
+
+#git-icon:hover {
+  color: #ff0066;
+}
 /* adjustment for the blobl picture size  and position*/
 #blob-container {
   flex: 1;
@@ -241,75 +254,106 @@ nav a:hover {
 }
 
 /* the design for page 2*/
-
-.container2 {
-  position: relative;
-}
-.page2 h2 {
-  font-family: 'Rubik', sans-serif;
-}
-
-.page2 {
-  margin-top: 5vh;
+.page2-circles-container {
   width: 100%;
-  height: 95vh;
-  display: grid;
-  grid-template-columns: 1;
-  grid-template-rows: 3;
-  position: absolute;
-  color: white;
-  opacity: 90%;
-  font-size: 20px;
-  z-index: 100;
-}
-.row1,
-.row2,
-.row3,
-.row4 {
-  width: 100%;
-  height: 80px;
-  z-index: 100;
-}
-
-.row1 {
-  grid-row: 1;
-  grid-column: 1;
-}
-.row2 {
-  grid-row: 2;
-  grid-column: 1;
-}
-.row3 {
-  grid-row: 3;
-  grid-column: 1;
-}
-.row4 {
-  grid-row: 4;
-  grid-column: 1;
-}
-.row1,
-.row3 {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
 }
-.row2,
-.row4 {
-  font-size: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 100px;
-  margin-bottom: 50px;
+.page2-circles-container h3 {
+  font-size: 30px;
+  margin-top: -10%;
+  color: rgb(217, 215, 215);
+  text-align: center;
+}
+.page2-circles-container ul {
+  width: 100%;
+  font-size: 120%;
+  margin-top: -5%;
+  color: rgb(217, 215, 215);
+  text-align: left;
+}
+.page2-circles-container li {
+  line-height: 2;
+}
+.page2-circles-container h3:hover,
+.page2-circles-container p:hover {
+  opacity: 100%;
+}
+.circle1,
+.circle2,
+.circle3 {
+  width: 250px;
+  height: 250px;
+  padding: 5%;
+  margin: 0 -1%;
+  z-index: 100;
+  opacity: 80%;
+}
+.circle1 {
+  background: #dd3f31;
+  animation: move 7s forwards ease infinite alternate-reverse;
+  transition: ease 1s;
+  border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
+}
+.circle2 {
+  background: #3c31dd;
+  animation: move 7s forwards ease 1.5s infinite alternate-reverse;
+  transition: ease 1s;
+  border-radius: 80% 30% 50% 50%/50%;
+}
+.circle3 {
+  background: #202731;
+  animation: move 7s forwards ease 1s infinite alternate-reverse;
+  transition: ease 1s;
+  border-radius: 40% 40% 50% 40%/30% 50% 40% 30%;
 }
 
-.row2 i:hover {
-  color: #3c31dd;
+.circle1:hover {
+  transform: translate(-40px, -20px);
+  animation: none;
+  opacity: 100%;
 }
-.row4 i:hover {
-  color: #ff0066;
+
+.circle1:hover ~ .circle3 {
+  transform: translate(40px, 20px);
+  opacity: 100%;
+}
+
+.circle2:hover ~ .circle3 {
+  transform: translate(40px, 0px);
+}
+
+.circle2:hover {
+  margin-left: 1.5%;
+  opacity: 100%;
+}
+
+.circle3:hover {
+  transform: translate(40px, -20px);
+  opacity: 100%;
+}
+
+@keyframes move {
+  0% {
+    border-radius: 41% 50% 60% 70%/50% 50% 70% 60%;
+  }
+  20% {
+    border-radius: 55% 50% 60% 65%/54% 50% 70% 60%;
+  }
+  40% {
+    border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
+  }
+  60% {
+    border-radius: 41% 40% 50% 40%/30% 50% 50% 60%;
+  }
+  80% {
+    border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
+  }
+  100% {
+    border-radius: 41% 40% 50% 40%/30% 48% 50% 50%;
+  }
 }
 
 /* page3 */
@@ -496,9 +540,7 @@ form button:hover {
     font-size: 35px;
   }
   .text-cover p {
-    font-size: 14px;
-  }
-  .navigation {
+    font-size: 16px;
   }
   #menu {
     font-size: 12px;
@@ -506,25 +548,68 @@ form button:hover {
     flex: 3;
     margin-right: 5%;
   }
-  section .row1,
-  section .row3 {
-    font-size: 20px;
-  }
-  section .row2,
-  section .row4 {
-    font-size: 40px;
-    gap: 35px;
-  }
   .wrapper {
     width: 350px;
   }
   form {
     width: 300px;
   }
+  #git-icon {
+    font-size: 30px;
+    margin-right: 10%;
+    margin-top: 5%;
+    z-index: 100;
+  }
+
+  .page2-circles-container {
+    flex-direction: column;
+    padding-top: 5%;
+  }
+  .circle1,
+  .circle2,
+  .circle3 {
+    width: 150px;
+    height: 150px;
+    color: white;
+    padding: 5%;
+    margin: 0 -1%;
+    z-index: 100;
+  }
+
+  .page2-circles-container h3 {
+    font-size: 100%;
+    margin-top: -10%;
+    color: rgb(217, 215, 215);
+    text-align: center;
+  }
+  .page2-circles-container ul {
+    width: 100%;
+    font-size: 75%;
+    margin-top: -5%;
+    margin-left: -10%;
+    color: rgb(217, 215, 215);
+    text-align: left;
+  }
+  .page2-circles-container li {
+    line-height: 2;
+  }
 }
 
 /* Responsive styles for screens between 601px and 1024px (tablets) */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
+  .text-cover-h1 {
+    font-size: 40px;
+  }
+  .text-cover p {
+    font-size: 18px;
+  }
+
+  #git-icon {
+    font-size: 35px;
+    margin-right: 10%;
+    margin-top: 5%;
+    z-index: 100;
+  }
   .wrapper {
     width: 700px;
   }
@@ -534,6 +619,24 @@ form button:hover {
   #menu {
     flex: 2;
     margin-right: 5%;
+  }
+
+  .page2-circles-container h3 {
+    font-size: 160%;
+    margin-top: -10%;
+    color: rgb(217, 215, 215);
+    text-align: center;
+  }
+  .page2-circles-container ul {
+    width: 100%;
+    font-size: 100%;
+    margin-top: -5%;
+    margin-left: -10%;
+    color: rgb(217, 215, 215);
+    text-align: left;
+  }
+  .page2-circles-container li {
+    line-height: 2;
   }
 }
 
@@ -546,18 +649,22 @@ form button:hover {
     font-size: 18px;
   }
 
-  section .row1,
-  section .row3 {
-    font-size: 30px;
-  }
-  section .row2,
-  section .row4 {
-    font-size: 60px;
-  }
   .wrapper {
     width: 1050px;
   }
   form {
     width: 400px;
+  }
+
+  .circle1,
+  .circle2,
+  .circle3 {
+    width: 250px;
+    height: 250px;
+    color: white;
+    padding: 5%;
+    margin: 0 -1%;
+    z-index: 100;
+    text-align: center;
   }
 }
